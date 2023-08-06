@@ -28,7 +28,7 @@ const mergeContent = (baseContent: string, content: any) => {
   const { hex, npub } = showPublic();
   console.log("👀 Checking:", npub);
 
-  let lastCheckedAt = Math.floor(Date.now() / 1000);
+  let lastCheckedAt = now();
   let isDefaultProfile = true;
   let toDefaultProfileTimeoutId: NodeJS.Timeout = setTimeout(() => null, 0);
 
@@ -105,7 +105,7 @@ const mergeContent = (baseContent: string, content: any) => {
           };
 
           publish(defaultProfileEvent);
-        }, 3 * 60 * 1000);
+        }, (config.interval || 5 * 60) * 1000);
       }
     }
 
