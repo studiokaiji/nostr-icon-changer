@@ -20,7 +20,7 @@ yarn
 
 3. 設定
 
-config.json に設定を記録してください
+config.jsonを設定する
 
 ```json
 {
